@@ -1,0 +1,8 @@
+Tabelat e databazes:
+
+Students - 
+Places - 
+Events - 
+Opinions - 
+
+Authentication: Devise

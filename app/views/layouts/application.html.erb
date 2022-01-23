@@ -11,12 +11,229 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <h1 class="heading--hidden">Student Locations Debrecen - Thesis Work</h1> <!-- seo reasons, first heading should be an h1 and it should have the page title -->
+		<!-- header -->
+		<header class="header">
+			<div class="header__control">
+				<div class="header__search">
+					<img src="assets/images/icon-search.svg" class="header__search-icon">
+					<form action="" class="header__search-form" autocomplete="off">
+						<input type="text" name="search" class="header__search-input">
+					</form>
+				</div>
+				<div class="header__center">
+					<a href="" class="header__logo-link">
+						<img src="assets/images/logo.svg" class="header__logo">
+					</a>
+				</div>
+				<div class="header__menu-button">
+					<a class="header__menu-toggle"><span class="header__menu-line"></span></a>
+				</div>
+				<div class="header__buttons">
+					<div class="header__account-menu">
+						<a href="" class="link header__account-link">Register</a>
+						|
+						<a href="" class="link header__account-link">My Account</a>
+					</div>
+					<div class="header__shopping-menu">
+						<a href="" class="link header__shopping-icon"><img src="assets/images/icon-wishlist.svg"></a>
+						<a href="" class="link header__shopping-icon"><img src="assets/images/icon-bag.svg"></a>
+					</div>
+				</div>
+			</div>
+			<div class="header__nav">
+				<div class="header__dropdown">
+					<a href="" class="link header__menu">SHOP BY CATEGORY</a>
+				</div>
+				<div class="header__dropdown">
+					<a href="" class="link header__menu">SHOP BY BRAND</a>
+					<ul class="header__dropdown-list">						
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">ANNAKIKI</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">LE KILT</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">ANNE WEST</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">LINGUA FRANCA</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">BACON CLOTHING</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">MORPHO AND LUNA</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">BLACK CROWS</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">NASTAHA ZINKO</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">BLANCHA</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">PERFECT MOMENT</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">CANCELLATO</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">SPENCER VLADIMIR</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">CORDOVA</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">STAND</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">FUSALP</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">WILD AND WOOLLY</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">I LOVE MR MITTENS</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">WOOLY BOOLY</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">IENKI IENKI</a>
+						</li>
+						<li class="header__list-item">
+							<a href="" class="header__item-link link">BLACK CROWS</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__dropdown">
+					<a href="" class="link header__menu">SHOP BY COLLECTION</a>
+				</div>
+				<div class="header__dropdown">
+					<a href="" class="link header__menu">ABOUT KOIBIRD</a>
+				</div>
+				<div class="header__dropdown">
+					<a href="" class="link header__menu">POP-UP SHOP</a>
+				</div>
+			</div>
+			<div class="header__nav--mobile">
+				<div class="header__buttons--mobile">
+					<div class="header__account-menu">
+						<a href="" class="link header__account-link">Register</a>
+						|
+						<a href="" class="link header__account-link">My Account</a>
+					</div>
+					<div class="header__shopping-menu">
+						<a href="" class="link header__shopping-icon"><img src="assets/images/icon-wishlist.svg"></a>
+						<a href="" class="link header__shopping-icon"><img src="assets/images/icon-bag.svg"></a>
+					</div>
+				</div>
+				<div class="header__dropdown--mobile">
+					<a href="" class="link header__menu--mobile">SHOP BY CATEGORY</a>
+				</div>
+				<div class="header__dropdown--mobile header__dropdown--has-sub">
+					<span class="header__dropdown-arrow"><img src="assets/images/icon-right-arrow-black.svg"></span>
+					<a href="" class="link header__menu--mobile">SHOP BY BRAND</a>
+					<ul class="header__dropdown-list--mobile">						
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">ANNAKIKI</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">LE KILT</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">ANNE WEST</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">LINGUA FRANCA</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">BACON CLOTHING</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">MORPHO AND LUNA</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">BLACK CROWS</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">NASTAHA ZINKO</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">BLANCHA</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">PERFECT MOMENT</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">CANCELLATO</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">SPENCER VLADIMIR</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">CORDOVA</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">STAND</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">FUSALP</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">WILD AND WOOLLY</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">I LOVE MR MITTENS</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">WOOLY BOOLY</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">IENKI IENKI</a>
+						</li>
+						<li class="header__list-item--mobile">
+							<a href="" class="header__item-link--mobile link">BLACK CROWS</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__dropdown--mobile">
+					<a href="" class="link header__menu--mobile">SHOP BY COLLECTION</a>
+				</div>
+				<div class="header__dropdown--mobile">
+					<a href="" class="link header__menu--mobile">ABOUT KOIBIRD</a>
+				</div>
+				<div class="header__dropdown--mobile">
+					<a href="" class="link header__menu--mobile">POP-UP SHOP</a>
+				</div>
+			</div>
+		</header>
+
+		<!-- main content -->
+		<div class="container">
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+		</div>
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__control">
+					<img src="assets/images/logo.svg" class="footer__logo">
+					<div class="footer__nav">
+						<a href="https://ajri.dev" class="footer__link link">ABOUT</a>
+					</div>
+				</div>
+			</div>
+		</footer>
   </body>
 </html>

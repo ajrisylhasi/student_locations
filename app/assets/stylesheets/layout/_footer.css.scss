@@ -1,0 +1,143 @@
+@import "base/variables";
+@import "base/mixins";
+
+.footer {
+	$self: &;
+	background: $primary;
+	margin-top: 40px;
+	height: 240px;
+	@include lg {
+		height: 350px;
+	}
+	display: flex;
+	align-items: center;
+	&__container {
+		max-width: 1600px;
+		width: 95%;
+		margin: auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__control {
+		width: 60%;
+		@include lg {
+			width: 100%;
+			justify-content: center;
+		}
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	&__logo {
+		max-width: 200px;
+		text-align: left;
+	}
+	&__nav {
+		width: 100%;
+		margin-top: auto;
+		text-align: left;
+		@include lg {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 25px;
+		}
+	}
+	&__link {
+		margin: 30px;
+		@include lg {
+			margin: 5px;
+			&:after {
+				content: " |"
+			}
+			&:last-child {
+				&:after {
+					content: ""
+				}
+			}
+		}
+		&:first-child {
+			margin-left: 0px;
+		}
+		&:last-child {
+			margin-right: 0px
+		}
+	}
+	&__newsletter {
+		width: 40%;
+		@include lg {
+			width: 100%;
+			margin-top: 50px;
+		}
+		display: flex;
+		justify-content: right;
+	}
+	&__newsletter-container {
+		min-width: 530px;
+		position: relative;
+		@include lg {
+			min-width: 100%;
+		}
+	}
+	&__form {
+		@include lg {
+			text-align: center
+		}
+	}
+	&__text {
+		@include lg {
+			text-align: center;
+		}
+	}
+	&__input {
+		width: 90%;
+		min-height: 45px;
+		font-size: 15px;
+		padding-left: 10px;
+		border: 0;
+		outline: none;
+		margin-top: 12px;
+	}
+	&__checkbox {
+		margin-right: 15px;
+		appearance: none;
+		-webkit-appearance: none;
+		background-color: $white;
+		width: 15px;
+		height: 15px;
+		display: grid;
+		place-content: center;
+		&:before {
+			content: "";
+			width: 0.65em;
+			height: 0.65em;
+			clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+			transform: scale(0);
+			transform-origin: bottom left;
+			transition: 120ms transform ease-in-out;
+			background-color: $black; 
+		}
+		&:checked{
+			&:before {
+				transform: scale(1);
+			}
+		}
+	}
+	&__label {
+		font-size: $text-font-size-secondary;
+		margin-top: 12px;
+		display: flex;
+		align-items: center;
+		@include lg {
+			align-items: flex-start;
+			justify-content: center;
+		}
+	}
+	&__submit {
+		margin-top: 10px;
+		border: 0;
+		background: none;
+		font-size: $text-font-size;
+		cursor: pointer;
+	}
+}

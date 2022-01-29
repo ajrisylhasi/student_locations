@@ -5,4 +5,15 @@ Places -
 Events - 
 Opinions - 
 
-Authentication: Devise
+Authentication: Devise.
+
+Procedure:
+    1.
+        - Add Devise.
+        - Commands:
+            -- rails g devise:install
+    2.
+        - Add Users using Devise
+        - Commands:
+            -- rails g devise user
+            -- rails db:migrate

@@ -1,0 +1,267 @@
+@import "base/variables";
+@import "base/mixins";
+
+.header {
+	$self: &;
+	z-index: 3;
+	height: $header-height - 40px;
+	@include lg {
+		height: $header-height-medium;
+	}
+	display: block;
+	position: sticky;
+	background: white;
+	top: 0;
+	.header--hover {
+		&:hover {
+			#{ $self }__dropdown-list{ 
+				visibility: visible;
+				height: 400px;
+				max-height: 400px;
+				padding: 40px 0px 40px 40px;
+				transition: 0.25s ease-in-out;
+			}
+			#{ $self }__list-item {
+				opacity: 1;
+				transition: opacity 0.75s;
+			}
+		}
+	}
+	&__control {
+		display: flex;
+		align-items: center;
+		max-width: 1600px;
+		width: 90%;
+		margin: auto;
+	}
+	&__menu-button {
+		width: 30%;
+		justify-content: right;
+		display: none;
+		@include lg {
+			display: flex;
+		}
+	}
+	&__menu-toggle {
+		display: block;
+		cursor: pointer;
+		margin-left: auto;
+		&:before, &:after, #{$self}__menu-line {
+			background: $black;
+			content: "";
+			display: block;
+			height: 2px;
+			width: 30px;
+			border-radius: 3px;
+			margin: 7px 0;
+			transition: 0.5s;
+		}
+		&--opened {
+			&:before {
+				transform: translateY(9.5px) rotate(135deg);
+				width: 45px;
+			}
+			&:after {
+				transform: translateY(-8px) rotate(-135deg);
+				width: 45px;
+			}
+			span {
+				transform: scale(0);
+			}
+		}
+	}
+	&__search {
+		width: 25%;
+		transition: all 0.5s;
+		@include x-lg {
+			width: 20%;
+		}
+		@include lg {
+			width: 30%;
+		}
+		display: flex;
+		align-items: center;
+	}
+	&__search-input {
+		border: 0px;
+		border-bottom: 1px solid $black;
+		width: 215px;
+		transition: all 0.5s;
+		min-height: 28px;
+		padding-left: 30px;
+		@include lg {
+			width: 0px;
+			&--opened {
+				width: calc(100% - 40px);
+			}
+		}
+		&:focus-visible {
+			outline: 0px
+		}
+	}
+	&__search-icon {
+		position: absolute;
+	}
+	&__center {
+		width: 50%;
+		text-align: center;
+		@include lg {
+			width: 40%;
+			text-align: center;
+		}
+	}
+	&__buttons{
+		width: 25%;
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		@media(max-width: $large) {
+			display: none;
+		}
+		&--mobile {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 25px 0px;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.5s;
+		}
+	}
+	&__logo {
+		width: 500px;
+		transition: all 0.5s;
+		@include x-lg {
+			width: 400px;
+		}
+		@include lg {
+			width: 100%;
+		}
+	}
+	&__nav {
+		padding: 30px 0px;
+		display: flex;
+		@include lg {
+			display: none;
+		}
+		justify-content: center;
+		max-width: 1600px;
+		width: 95%;
+		margin: auto;
+		&--mobile {
+			display: block;
+			background: $white;
+			padding: 30px 0px;
+			min-height: 320px;
+			transition: all 0.5s;
+			opacity: 0;
+			transform: translateY(100%) scale(0);
+		}
+		&--min-content {
+			height: min-content;
+		}
+		&--opened {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+			#{$self}__dropdown--mobile {
+				opacity: 1;
+				visibility: visible;
+			}
+			#{$self}__buttons--mobile {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	&__dropdown {
+		width: 20%;
+		text-align: center;
+		max-height: 40px;
+		@extend .header--hover;
+		&--mobile {
+			text-align: center;
+			margin: 25px;
+			opacity: 0;
+			transition: all 0.5s;
+			visibility: hidden
+		}
+	}
+	&__menu--mobile {
+		border-bottom: solid 2px $black;
+	}
+	&__dropdown-arrow {
+		position: absolute;
+		cursor: pointer;
+		right: 20%;
+		transform: rotate(90deg);
+	}
+	&__dropdown-list {
+		text-align: left;
+		visibility: hidden;
+		width: 190%;
+		margin: 20px 0px 0px 70px;
+		padding: 0px;
+		display: flex;
+		flex-wrap: wrap;
+		background: white;
+		height: 0px;
+		transition: 0.75s;
+		@extend .header--hover;
+		&--mobile {
+			visibility: hidden;
+			margin: 10px 0px 0px 0px;
+			transition: 0.75s;
+			padding: 0px;
+		}
+		&--opened {
+			visibility: visible;
+			#{$self}__list-item--mobile {
+				height: 17px;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+	&__list-item {
+		list-style: none;
+		width: calc(50% - 40px);
+		margin: 10px 20px;
+		transition: opacity 0.25s;
+		opacity: 0;
+		&--mobile {
+			list-style: none;
+			margin: 0px 20px;
+			height: 0px;
+			visibility: hidden;
+			transition: height 0.5s, opacity 0.25s, visibility 0.5s;
+			opacity: 0;
+		}
+	}
+	&__item-link {
+		border-bottom: solid 5px transparent;
+		padding-bottom: 5px;
+		&:hover {
+			border-bottom: solid 5px $primary;
+		}
+	}
+	&__account-link {
+		font-size: $text-font-size-secondary;
+		text-transform: none;
+		margin: 0px 15px;
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+	&__shopping-menu {
+		transition: all 0.5s;
+		margin-left: 60px;
+		@include x-lg { margin-left: 20px; }
+	}
+	&__shopping-icon {
+		transition: all 0.5s;
+		&:first-child {
+			margin-right: 30px;
+			@include x-lg { margin-right: 10px; }
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@mixin x-lg {
+	@media (max-width: $x-large) { @content; }
+}
+
+@mixin lg {
+	@media (max-width: $large) { @content; }
+}
+
+@mixin md {
+	@media (max-width: $medium) { @content; }
+}

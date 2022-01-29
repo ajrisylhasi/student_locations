@@ -1,0 +1,33 @@
+@import "base/fonts";
+// + colors
+$primary: #E0FF04 !default;
+$white:  #ffffff !default;
+$black:  #000000 !default;
+$gray: #999999 !default;
+
+// + media queries
+$small: 480px !default;
+$medium: 768px !default;
+$large: 1080px !default;
+$x-large: 1330px !default;
+
+// + headings
+$font-color: $black;
+$font-color-secondary: $white;
+$h2-font-size: 22px;
+$h2-line-height: 25px;
+$h3-font-size: 50px;
+$h3-font-size-secondary: 47px;
+$h3-line-height: 59px;
+$h3-line-height-secondary: 70px;
+$text-font-size: 16px;
+$text-font-size-secondary: 12px;
+$text-color-secondary: $gray;
+$text-line-height: 19px;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+$font-family: 'Montserrat';
+
+// + layout
+$header-height: 200px;
+$header-height-medium: 70px;

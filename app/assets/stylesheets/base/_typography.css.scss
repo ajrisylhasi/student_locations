@@ -1,0 +1,44 @@
+@import "base/variables";
+
+p, a, h2, h3, input, li, label, i, em {
+  font-family: $font-family;
+  hyphens: none;
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+	color: $font-color;
+	text-transform: uppercase;
+	&--hidden {
+		display: none;
+	}
+	&__2 {
+		font-size: $h2-font-size;
+		line-height: $h2-line-height; 
+		font-weight: $font-weight-regular;
+		&--bold {
+			font-weight:  $font-weight-bold;
+		}
+	}
+	&__3 {
+		font-size: $h3-font-size;
+		line-height: $h3-line-height;
+		font-weight: $font-weight-regular;
+		color: $font-color-secondary;
+		&--larger {
+			color: $font-color;
+			font-size: $h3-font-size-secondary;
+			line-height: $h3-line-height-secondary;
+			font-weight: $font-weight-regular;
+		}
+	}
+}
+
+.paragraph, .link {
+	font-size: $text-font-size;
+	color: $font-color;
+	line-height: $text-line-height;
+	text-transform: uppercase;
+	text-decoration: none;
+}

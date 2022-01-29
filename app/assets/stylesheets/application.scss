@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+ // - fonts
+@import "base/fonts";
+
+// - variables
+@import "base/variables";
+
+// - mixins
+@import "base/mixins";
+
+// - typography
+@import "base/typography";
+
+// - general
+@import "base/general";
+
+// - header
+@import "layout/header";
+
+// - hero
+@import "components/hero";
+
+// - footer
+@import "layout/footer";
